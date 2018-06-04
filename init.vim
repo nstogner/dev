@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'fatih/molokai'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go' " , { 'do': ':GoInstallBinaries' }
 Plug 'scrooloose/nerdtree'
 Plug 'justinmk/vim-sneak'
 " Autocomplete
