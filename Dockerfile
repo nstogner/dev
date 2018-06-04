@@ -19,11 +19,11 @@ RUN apt-get -qq -y install python3-pip
 RUN pip install --upgrade neovim
 RUN pip3 install --upgrade neovim
 
-# Install go.
+# Setup golang development environment.
 WORKDIR /tmp
-RUN curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz
+RUN curl -O https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz && rm go1.10.2.linux-amd64.tar.gz
 ENV PATH $PATH:/usr/local/go/bin
+ENV GOPATH /go
 
 # Copy our neovim config.
 COPY init.vim /root/.config/nvim/init.vim
@@ -31,5 +31,5 @@ COPY init.vim /root/.config/nvim/init.vim
 # Install vim plugins.
 RUN nvim +PlugInstall +qall
 
-WORKDIR /app
+WORKDIR /work
 
