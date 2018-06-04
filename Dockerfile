@@ -38,4 +38,5 @@ RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 RUN chsh -s /bin/zsh
 
 WORKDIR /work
+ENTRYPOINT zsh
 
