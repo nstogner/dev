@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker build -f ~/dev/Dockerfile -t dev ~/dev
+docker run -it -v "$(pwd)":/app --detach-keys ctrl-z dev $1
+
