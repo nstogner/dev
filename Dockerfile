@@ -31,5 +31,11 @@ COPY init.vim /root/.config/nvim/init.vim
 # Install vim plugins.
 RUN nvim +PlugInstall +qall
 
+# ZSH!
+RUN apt-get -qq -y install zsh
+RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+RUN chsh -s /bin/zsh
+
 WORKDIR /work
 
